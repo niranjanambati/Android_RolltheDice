@@ -23,12 +23,11 @@ class MainActivity : ComponentActivity() {
             rollDice()
         }
     }
-}
 
 private fun rollDice() {
     val random= Random()
     val randomNumber=random.nextInt(6)+1
-    val drawableResource = when (random) {
+    val drawableResource = when (randomNumber) {
         1 -> R.drawable.dice1
         2 -> R.drawable.dice2
         3 -> R.drawable.dice3
@@ -36,7 +35,7 @@ private fun rollDice() {
         5 -> R.drawable.dice5
         else -> R.drawable.dice6
     }
-
     diceImage.setImageResource(drawableResource)
-    val resultTextView.text= "you Rolled a $randomNumber"
+    resultTextView.text= "you rolled a $randomNumber"
+}
 }
